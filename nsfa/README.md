@@ -1,14 +1,14 @@
 # Non-stationary fluctuation analysis (NSFA)
 
 Man Ho Wong  
-Department of Neuroscience, University of Pittsburgh
+Department of Neuroscience  
+University of Pittsburgh
 
 This page ducuments the core algorithm of NSFA. The source code and the data used in the analysis will be available to public once the work is accepted for publication, hopefully in 2023!
 
 The following algorithm is an optimized implementation of the analysis procedures described in Hartveit and Veruki (2007). It can be used for automatic analysis of large datasets containing miniatured EPSC (mEPSC) signals.
 
 > Hartveit E, Veruki ML. Studying properties of neurotransmitter receptors by non-stationary noise analysis of spontaneous postsynaptic currents and agonist-evoked responses in outside-out patches. Nat Protoc. 2007;2(2):434-48. doi: 10.1038/nprot.2007.47. PMID: 17406605.
-
 
 ---
 
@@ -77,7 +77,8 @@ Peaks are detected as in step 2.
 
 Only the 95% to 10% decay region is used for the analysis. To locate this window, the theoretical amplitude at 95% of peak and at 10% of peak are first calculated from the peak amplitude of the average trace as the decay start point and decay end point. The exact amplitude likely does not exist in the trace, but the points nearest to the theoretical decay start point and end point can be used. To minimize the effect of noise on decay region location, three time points are used as the search window for the decay start point and end point.
 
-Locations of decay start point and end point for the analysis of `example_recording.txt`:
+Locations of decay start point and end point for the analysis of `example_recording.txt` ↓
+
 <img src="images/analysis_start_end_points.png" height = 300>
 
 ## 7. Compute mean of amplitude ($μ$) at each time point within the decay region
@@ -94,5 +95,6 @@ $σ^2 = i\cdotμ - \dfrac{μ^2}{N} + σ_{background}^2$
 
 Single-channel current ($i$) and number of channels ($N$) can be obtained from the fitting results.
  
-Fitting results of `example_recording.txt`:  
+Fitting results of `example_recording.txt` ↓
+
 <img src="images/nsfa_fit.png" height = 300>
