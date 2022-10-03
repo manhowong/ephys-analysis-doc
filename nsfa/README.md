@@ -81,9 +81,9 @@ Locations of decay start point and end point for the analysis of `example_record
 
 <img src="images/analysis_start_end_points.png" height = 300>
 
-## 7. Compute mean of amplitude ($μ$) at each time point within the decay region
+## 7. Compute mean of amplitude (μ) at each time point within the decay region
 
-## 8. Compute amplitude variance ($σ^2$) at each time point within the decay region using peak-scaled average trace
+## 8. Compute amplitude variance (σ^2) at each time point within the decay region using peak-scaled average trace
 
 To get the peak-scaled average trace, scale average trace so that its peak amplitude equals to the amplitude of the trace being compared to at the same time point.
 
