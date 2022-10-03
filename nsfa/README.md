@@ -4,9 +4,9 @@ Man Ho Wong
 Department of Neuroscience  
 University of Pittsburgh
 
-This page ducuments the core algorithm of NSFA. The source code and the data used in the analysis will be available to public once the work is accepted for publication, hopefully in 2023!
+This page documents the core algorithm of NSFA. The source code and the data used in the analysis will be available to the public once the work is accepted for publication, hopefully in 2023!
 
-The following algorithm is an optimized implementation of the analysis procedures described in Hartveit and Veruki (2007). It can be used for automatic analysis of large datasets containing miniatured EPSC (mEPSC) signals.
+The following algorithm is an optimized implementation of the analysis procedures described in Hartveit and Veruki (2007). It can be used for automatic analysis of large datasets containing miniature EPSC (mEPSC) signals.
 
 > Hartveit E, Veruki ML. Studying properties of neurotransmitter receptors by non-stationary noise analysis of spontaneous postsynaptic currents and agonist-evoked responses in outside-out patches. Nat Protoc. 2007;2(2):434-48. doi: 10.1038/nprot.2007.47. PMID: 17406605.
 
@@ -30,10 +30,10 @@ Example of aligned traces and the average trace in `example_recording.txt` ↓
 NSFA is sensitive to noise and signal stability as amplitude fluctuation is being analyzed To control data quality, traces are removed from the analysis if one of the following criteria is matched:
 1. The amplitude of a trace's tail falls outside a user-defined range (relative to the average trace). This indicates unstable recording.
 2. The baseline falls outside a user-defined range (relative to the trace tail). This indicates unstable recording.
-3. The event in the trace does not pass detection threshold or the trace has more than one event (i.e. overlapping events).
+3. The event in the trace does not pass the detection thresholds or the trace has more than one event (i.e. overlapping events).
 4. The peak occurs 1 ms or later after the average peak.
 
-Event peaks in each trace are detected automatically as follow:
+Event peaks in each trace are detected automatically as follows:
 The trace is first smoothed to reduce noise. (Instead of smoothing, noise can also be removed by filters but it is probably less efficient and unnecessary for the purpose of peak detection.) The first derivative (gradient) at each time point of the smoothed trace is then computed. Peaks are defined as the transition point of the switch of derivative signs. (For downward peaks, sign switches from negative to positive.)
 
 Examples of traces passing the above criteria ↓
