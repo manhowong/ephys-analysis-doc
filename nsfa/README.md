@@ -34,7 +34,7 @@ NSFA is sensitive to noise and signal stability as amplitude fluctuation is bein
 4. The peak occurs 1 ms or later after the average peak.
 
 Event peaks in each trace are detected automatically as follow:
-The trace is first smoothed to reduce noise. (Instead of smoothing, noise can also be removed by filters but it is probably less efficient and unnecessary for the purpose of peak detection.) The first derivative of the smoothed trace at each time point is computed. Peaks are defined as the transitioning point of the switch of derivative signs. (For downward peaks, sign switches from negative to positive.)
+The trace is first smoothed to reduce noise. (Instead of smoothing, noise can also be removed by filters but it is probably less efficient and unnecessary for the purpose of peak detection.) The first derivative (gradient) at each time point of the smoothed trace is then computed. Peaks are defined as the transition point of the switch of derivative signs. (For downward peaks, sign switches from negative to positive.)
 
 Examples of traces passing the above criteria ↓
 
@@ -87,13 +87,13 @@ Locations of decay start point and end point for the analysis of `example_record
 
 To get the peak-scaled average trace, scale average trace so that its peak amplitude equals to the amplitude of the trace being compared to at the same time point.
 
-## 9. Fit data to model to find $i$ and $N$
+## 9. Fit data to model to find i and N
 
 Using the mean and variance computed in previous steps, the variance-mean relationship of can be fitted with the following function based on a binomial model for quantal neurotransmitter release:
 
 $σ^2 = i\cdotμ - \dfrac{μ^2}{N} + σ_{background}^2$ 
 
-Single-channel current ($i$) and number of channels ($N$) can be obtained from the fitting results.
+Single-channel current (i) and number of channels (N) can be obtained from the fitting results.
  
 Fitting results of `example_recording.txt` ↓
 
